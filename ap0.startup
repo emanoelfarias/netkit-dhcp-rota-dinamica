@@ -1,0 +1,14 @@
+#CONFIGURACAO DO IP
+
+ifconfig eth0 10.1.1.9/29
+
+#INICIACAO DO SERVIDOR
+/etc/init.d/dhcp3-server start
+
+
+#START DAEMONS
+
+/etc/init.d/zebra start
+
+
+

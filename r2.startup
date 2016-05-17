@@ -1,0 +1,20 @@
+#CONFIGURACAO DE IP POR ETH
+
+ifconfig eth0 10.1.0.1/29
+ifconfig eth1 10.1.1.25/30
+ifconfig eth2 10.1.1.17/30
+
+#INICIACAO DO SERVICO DE DHCP
+
+/etc/init.d/dhcp3-server start
+
+#INTERFACE NAT PARA ACESSO A INTERNET
+
+sysctl -w net.ipv4.ip_forward=1
+iptables -t nat -A POSTROUTING -j MASQUERADE
+
+#START DAEMONS
+
+/etc/init.d/zebra start
+
+#route add default gw 10.1.1.18 #gateway padrao

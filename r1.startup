@@ -1,0 +1,8 @@
+#CONFIGURACAO DE IP POR ETH
+
+ifconfig eth0 10.1.1.26/30
+ifconfig eth1 10.1.1.29/30
+
+#START DAEMONS
+
+/etc/init.d/zebra start
