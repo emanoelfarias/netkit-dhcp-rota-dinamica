@@ -8,4 +8,4 @@ ifconfig eth2 172.16.0.1/30
 
 /etc/init.d/zebra start
 
-#route add default gw 172.16.0.2 #gateway padrao
+route add default gw 172.16.0.2 #gateway padrao

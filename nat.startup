@@ -10,7 +10,17 @@ sysctl -w net.ipv4.ip_forward=1
 iptables -t nat -A POSTROUTING -j MASQUERADE
 
 
-#START DAEMONS
+route add default gw 192.175.0.1 #gateway padrao
 
-/etc/init.d/zebra start
+route add -net 10.1.1.16/30 gw 172.16.0.1
+route add -net 10.1.1.20/30 gw 172.16.0.1
+route add -net 10.1.0.0/29 gw 172.16.0.1
+route add -net 10.1.1.24/30 gw 172.16.0.1
+route add -net 10.1.1.28/30 gw 172.16.0.1
+route add -net 10.1.1.8/29 gw 172.16.0.1
+
+
+
+
+
 
